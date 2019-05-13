@@ -4,14 +4,14 @@ export class UserManual extends Component {
   render() {
     return (
       <div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+            <div className="card">
+          <div className="card-header">
+            <a className="card-link" data-toggle="collapse" href="#collapseTwo">
                         User manual
             </a>
                 </div>
-                <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
+          <div id="collapseTwo" className="collapse" data-parent="#accordion">
+            <div className="card-body">
                         <h6> Step 1: Check that you have a strong Wi-Fi or mobile data connection.</h6>
                         First make sure that you have a strong Internet connection either through Wi-Fi or mobile data
                 connection.<br />

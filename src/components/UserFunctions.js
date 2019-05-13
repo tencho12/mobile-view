@@ -29,3 +29,20 @@ export const login = user => {
             //display a page with error message
     })
 }
+
+export const updateProfile = user => {
+    return axios
+        .post('updateProfile', {
+            user_id:user.user_id,
+            user_name:user.user_name,
+            email: user.email,
+            cpassword:user.cpassword,
+            password: user.password,
+            location: user.location,
+            house_number:user.house_number
+
+        }).then((res) => {
+            //localStorage.setItem('usertoken', res.data)
+            return res.data
+        })     
+}

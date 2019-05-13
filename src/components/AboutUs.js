@@ -4,14 +4,14 @@ export class AboutUs extends Component {
   render() {
     return (
       <div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne">
+        <div className="card">
+          <div className="card-header">
+            <a className="collapsed card-link" data-toggle="collapse" href="#collapseOne">
                         About Us
             </a>
                 </div>
-                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
+          <div id="collapseOne" className="collapse show" data-parent="#accordion">
+            <div className="card-body">
                         <h6>Home Automation System using IoT</h6>
                         <p> This AutoHome App present the Home Automation System
                             using Internet of Things. The problem with a current

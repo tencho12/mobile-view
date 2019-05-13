@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { login } from '../components/UserFunctions';
 import HeaderLogin from '../components/HeaderLogin';
+import Footer from '../components/Footer';
+
 
 
 export class Login extends Component {
@@ -9,6 +11,7 @@ export class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      iserror: 'false',
       error:''
     }
   }
@@ -24,14 +27,28 @@ export class Login extends Component {
       password: this.state.password
     }
     login(user).then(res => {
-      if (res) {
+      if (!res.errorOccurred) {
         this.props.history.push('/home')
       } else {
-        this.props.history.push('/')
+        this.setState({
+          error: 'Either email or password is incorrect..',
+          iserror:'true'})
       }
     })
   }
   render() {
+    const ErrorHandler = (
+      <div className="container">
+        <div className="alert alert-warning alert-dismissible">
+          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>{this.state.error}</strong>
+        </div>
+        </div>
+    )
+    const noError = (
+      <div className="container">
+      </div>
+    )
     return (
       <div>
         <HeaderLogin />
@@ -44,7 +61,9 @@ export class Login extends Component {
             <input type="submit" value="Login" className="form-control btn btn-primary" /><br /><br />
             <a href="signup">Sign up if you did not!</a>
           </form>
-        </div>
+          </div>
+         {this.state.iserror==='false' ? noError : ErrorHandler }
+          <Footer />
       </div>
     )
   }

@@ -60,7 +60,7 @@ export class Profile extends Component {
         console.log('inside else')
 
         this.setState({
-          error: 'The passwords does not match.',
+          error: res.error,
           errorOccurred: 'true'
         })
       }

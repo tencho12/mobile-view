@@ -28,7 +28,7 @@ export class AboutUs extends Component {
                 </p>
                     </div>
                 </div>
-            </div><br />
+            </div>
       </div>
     )
   }

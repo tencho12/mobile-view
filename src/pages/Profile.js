@@ -54,11 +54,10 @@ export class Profile extends Component {
     updateProfile(user).then(res => {
       console.log(res)
       if (!res.errorOccurred) {
-        console.log('inside if')
+        //console.log('inside if')
         this.props.history.push('/Login')
       } else {
-        console.log('inside else')
-
+        // console.log('inside else')
         this.setState({
           error: res.error,
           errorOccurred: 'true'
@@ -71,7 +70,7 @@ export class Profile extends Component {
     const ErrorHandler = (
       <div className="container">
         <div className="alert alert-warning alert-dismissible">
-          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <a href="ten.co" className="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>{this.state.error}</strong>
         </div>
       </div>

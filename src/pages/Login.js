@@ -28,7 +28,8 @@ export class Login extends Component {
     }
     login(user).then(res => {
       if (!res.errorOccurred) {
-        this.props.history.push('/home')
+        localStorage.setItem('email', this.state.email);
+        this.props.history.push({ pathname: '/home' })
       } else {
         this.setState({
           error: 'Either email or password is incorrect..',
@@ -40,7 +41,7 @@ export class Login extends Component {
     const ErrorHandler = (
       <div className="container">
         <div className="alert alert-warning alert-dismissible">
-          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <a href="no.co" className="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>{this.state.error}</strong>
         </div>
         </div>

@@ -43,6 +43,17 @@ export const updateProfile = user => {
 
         }).then((res) => {
             //localStorage.setItem('usertoken', res.data)
-            return res.data
+            return res;
         })     
+}
+
+export const getDetails = user => {
+    return axios
+        .post('getDetails', {
+            user_id: user.user_id
+        })
+        .then((res) => {
+            // return res.dataS
+             console.log(res)
+        })
 }

@@ -25,7 +25,7 @@ export const login = user => {
             return res.data
         })
         .catch(err => {
-            console.log(err)
+            //console.log(err)
             //display a page with error message
     })
 }
@@ -54,6 +54,20 @@ export const getDetails = user => {
         })
         .then((res) => {
             // return res.dataS
-             console.log(res)
+             //console.log(res)
         })
+}
+
+export const updateSensorValues = value => {
+    return axios
+        .post('updateValues', {
+            heaterOnAt: value.heaterOnAt,
+            heaterOffAt: value.heaterOffAt,
+            lightOnAt: value.lightOnAt,
+            lightOffAt: value.lightOffAt,
+            fanOnAt: value.fanOnAt,
+            fanOffAt: value.fanOffAt,
+        }).then((res) => {
+            return res.data
+    })
 }

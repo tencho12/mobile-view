@@ -6,6 +6,7 @@ import home from './pages/home';
 import more from './pages/more';
 import Login from './pages/Login';
 import Profile from './pages/Profile'
+import Setting from './pages/Setting';
 
 export class App extends Component {
 
@@ -17,7 +18,8 @@ export class App extends Component {
         <Route path='/more' component={ more } />
         <Route path='/Login' component={ Login } />
           <Route path='/home' component={ home } />
-        <Route path='/profile' component={ Profile } />
+          <Route path='/profile' component={Profile} />
+        <Route path='/setting' component={ Setting } />
       </div>
       </Router>
     )

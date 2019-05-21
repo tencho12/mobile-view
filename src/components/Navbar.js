@@ -17,16 +17,20 @@ export class Navbar extends Component {
         </div>
       )
       const userLink = (
+          <div>
+          <li className='nav-item'>
+              <a href="/setting" className="nav-link">Setting</a>
+          </li>
           
         <li className="nav-item">
               <a href="rer" onClick={this.logOut.bind(this)} className="nav-link">Logout</a>
-        </li>
+              </li>
+          </div>
       )
 
       return (
           <div className="container">
               <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                  {/* <a className="navbar-brand" href="home"><img src="images/logoDark.png" alt=""/> */}
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span className="navbar-toggler-icon"></span>

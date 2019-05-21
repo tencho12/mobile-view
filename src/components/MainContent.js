@@ -5,15 +5,11 @@ import ContentBody from './ContentBody';
 
 export class MainContent extends Component {
     render() {
-        console.log('data:' + this.props.data)
+       
         return (
             <ContentBody  getStatus={this.getStatus} data={this.props.data}  makeAutomatic={this.props.makeAutomatic}/>
         );
     }
-}      
-            
-// MainContent.propTypes = {
-//     MainContent: PropTypes.array.isRequired
-// }
+}
 
 export default MainContent

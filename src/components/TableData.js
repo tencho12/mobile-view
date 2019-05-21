@@ -7,7 +7,7 @@ export class TableData extends Component {
     
 
     render() {
-        console.log(this.state.isauto)
+        //console.log(this.state.isauto)
         const { component_id, status } = this.props.data
         
         const automatic = (
@@ -23,7 +23,7 @@ export class TableData extends Component {
             <tr>
                 <td>{this.props.data.component_name}</td>
                 <td>{this.props.data.status?'ON':'OFF'}</td>
-                {this.state.isauto?automatic:manual}
+                { this.state.isauto?automatic:manual }
             </tr>
 
         )

@@ -95,8 +95,6 @@ export class ContentBody extends Component {
                                 </tbody>
                             ))
                             }
-
-
                         </table>
                     </div>
                 </div>

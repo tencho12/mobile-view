@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../components/Header'
 import axios from 'axios'
 import { updateSensorValues } from '../components/UserFunctions';
+import Footer from '../components/Footer'
+
 
 
 export class Setting extends Component {
@@ -179,6 +181,8 @@ export class Setting extends Component {
                     </div>
                 </div>
             </div>
+            <hr/>
+            <Footer/>
         </div>
     )
   }

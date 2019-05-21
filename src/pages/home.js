@@ -9,6 +9,7 @@ import axios from 'axios'
 export class home extends Component {
   state = {
     comp: [],
+    sensor:[],
     email:localStorage.getItem('email')
   }
   
@@ -41,6 +42,14 @@ export class home extends Component {
     );
   }
   
+  // componentDidMount() {
+  //   setInterval(() => {
+  //     this.setState(() => {
+  //       console.log('setting state');
+  //       return { unseen: "does not display" }
+  //     });
+  //   }, 1000);
+  // }
 
   componentDidMount() {
 
@@ -50,16 +59,25 @@ export class home extends Component {
       this.setState({
         comp: res.data
       })
-    })
+    });
+
+    axios.get('getsensorVal', {
+    }).then(res => {
+      this.setState({
+        sensor: res.data
+      })
+    });
+    
   }
   
 
   render() {
+
     return (
       <div>
         <Header /><br />
         {this.state.comp.map((data) => (
-          <MainContent key={data.room_id} data={data} makeAutomatic={this.makeAutomatic} />          
+          <MainContent key={data.room_id} sensorval={this.state.sensor} data={data} makeAutomatic={this.makeAutomatic} />          
         ))}
         <Footer/>
       </div>

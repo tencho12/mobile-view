@@ -60,7 +60,6 @@ export class ContentBody extends Component {
 
     render() {
         const { automated } = this.props.data;
-
         return (
             <div className="container">
                 <div>
@@ -77,7 +76,12 @@ export class ContentBody extends Component {
                                 <p>
                                     <input type="checkbox" checked={automated ? 'checked' : ''} onChange={this.props.makeAutomatic.bind(this, this.props.data.room_id)}></input>&nbsp;
                                     Automatic
-                                </p>
+                                </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <p><b>Temperature:</b></p>&nbsp;&nbsp;
+                                {this.props.sensorval.map((data) => (
+                                    <div><b>{data.value} </b>degrees </div>
+                                    
+                                ))}
                             </div>
                         </div>&nbsp;<br />
                         <table className="table table-bordered table-dark table-sm">

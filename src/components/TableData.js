@@ -17,12 +17,12 @@ export class TableData extends Component {
         )
 
         const manual = (
-            <td><input type="checkbox" onChange={this.props.markComplete.bind(this, component_id)} checked={status ? 'checked' : ''} /></td>
+            <td><input type="checkbox" onChange={this.props.markComplete.bind(this, component_id)} checked={status ? '' : 'checked'} /></td>
         )
         return (         
             <tr>
                 <td>{this.props.data.component_name}</td>
-                <td>{this.props.data.status?'ON':'OFF'}</td>
+                <td>{this.props.data.status ? 'OFF' :'ON'}</td>
                 { this.state.isauto?automatic:manual }
             </tr>
 

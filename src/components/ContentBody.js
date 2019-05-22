@@ -38,7 +38,7 @@ export class ContentBody extends Component {
                 comp_id,
                 auto
               });
-              comp.status = 0;
+              comp.status = !comp.status;
             }
             else {
                auto = 1;
@@ -46,7 +46,7 @@ export class ContentBody extends Component {
                 comp_id,
                 auto
               });
-              comp.status = 1;
+              comp.status = !comp.status;
             }
           }
           return comp;

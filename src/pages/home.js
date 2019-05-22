@@ -9,7 +9,6 @@ import axios from 'axios'
 export class home extends Component {
   state = {
     comp: [],
-    sensor:[],
     email:localStorage.getItem('email')
   }
   
@@ -61,12 +60,7 @@ export class home extends Component {
       })
     });
 
-    axios.get('getsensorVal', {
-    }).then(res => {
-      this.setState({
-        sensor: res.data
-      })
-    });
+    
     
   }
   
@@ -77,7 +71,7 @@ export class home extends Component {
       <div>
         <Header /><br />
         {this.state.comp.map((data) => (
-          <MainContent key={data.room_id} sensorval={this.state.sensor} data={data} makeAutomatic={this.makeAutomatic} />          
+          <MainContent key={data.room_id}  data={data} makeAutomatic={this.makeAutomatic} />          
         ))}
         <Footer/>
       </div>

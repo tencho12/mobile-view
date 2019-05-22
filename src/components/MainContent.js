@@ -7,7 +7,7 @@ export class MainContent extends Component {
     render() {
         return (
             
-            <ContentBody getStatus={this.getStatus} sensorval={this.props.sensorval} data={this.props.data}  makeAutomatic={this.props.makeAutomatic}/>
+            <ContentBody getStatus={this.getStatus}  data={this.props.data}  makeAutomatic={this.props.makeAutomatic}/>
         );
     }
 }

@@ -4,7 +4,7 @@ function Header() {
     return (
         <div style={headerStyle}>
             <h4>Home Automation System</h4><br />
-            <p>better home for better tommarrow</p>
+            <p>Better home for better tommarrow</p>
         </div>
     )
 }

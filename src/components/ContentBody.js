@@ -1,17 +1,27 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import TableData from '../components/TableData'
+import SensorValues from './SensorValues';
 
 
 export class ContentBody extends Component {
     state = {
         status: [],
         room_id: '',
+        temp:[]
     }
     componentDidMount() {
         this.setState({
             room_id: this.props.data.room_id
         })
+        
+        axios.post('getTemperature', {
+        room_id:this.props.data.room_id
+        }).then(res => {
+            this.setState({
+                temp: res.data
+            })
+        });
     }
 
 
@@ -59,6 +69,7 @@ export class ContentBody extends Component {
     }
 
     render() {
+
         const { automated } = this.props.data;
         return (
             <div className="container">
@@ -77,11 +88,10 @@ export class ContentBody extends Component {
                                     <input type="checkbox" checked={automated ? 'checked' : ''} onChange={this.props.makeAutomatic.bind(this, this.props.data.room_id)}></input>&nbsp;
                                     Automatic
                                 </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <p><b>Temperature:</b></p>&nbsp;&nbsp;
-                                {this.props.sensorval.map((data) => (
-                                    <div><b>{data.value} </b>degrees </div>
-                                    
-                                ))}
+                                   {this.state.temp.map((data) => (
+                                       <SensorValues key={data.id} data={data} />
+                                   ))}
+                            <p><b></b></p>&nbsp;&nbsp;
                             </div>
                         </div>&nbsp;<br />
                         <table className="table table-bordered table-dark table-sm">

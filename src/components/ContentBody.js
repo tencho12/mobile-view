@@ -64,12 +64,13 @@ export class ContentBody extends Component {
             this.setState({
                 status: res.data
             })
+            // console.log(this.state.status)
         })
-        // console.log(id)
+        
     }
 
     render() {
-
+        
         const { automated } = this.props.data;
         return (
             <div className="container">
@@ -89,7 +90,7 @@ export class ContentBody extends Component {
                                     Automatic
                                 </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                    {this.state.temp.map((data) => (
-                                       <SensorValues key={data.id} data={data} />
+                                       <SensorValues key={data.s_id} data={data} />
                                    ))}
                             <p><b></b></p>&nbsp;&nbsp;
                             </div>
@@ -102,7 +103,6 @@ export class ContentBody extends Component {
                                     <th scope="col">Turn ON/OFF</th>
                                 </tr>
                             </thead>
-
                             {this.state.status.map((data) => (
                                 <tbody>
                                     <TableData data={data} automated={automated} markComplete={this.markComplete}/>

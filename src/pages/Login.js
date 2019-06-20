@@ -55,9 +55,9 @@ export class Login extends Component {
         <HeaderLogin />
         <div className="container align-center">
           <form noValidate onSubmit={this.onSubmit}><br/>
-            <input type="email" name="email" placeholder="email ..." className="form-control" value={this.state.email}
+            <input type="email" name="email" placeholder="email ..." className="form-control" required value={this.state.email}
               onChange={this.onChange} /><br/>
-            <input type="password" name="password" placeholder="password ..." className="form-control" value={this.state.password}
+            <input type="password" name="password" placeholder="password ..." className="form-control" required value={this.state.password}
               onChange={this.onChange}/><br />
             <input type="submit" value="Login" className="form-control btn btn-primary" /><br /><br />
             <p className="sup">Sign up if you did not!</p>

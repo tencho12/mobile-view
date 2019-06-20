@@ -69,7 +69,10 @@ export class home extends Component {
 
     return (
       <div>
-        <Header /><br />
+        <Header />
+        <div className="text-right mr-2 mb-2 mt-2">
+          <a href="/home" className="btn btn-success btn-sm">Refresh</a>
+        </div>
         {this.state.comp.map((data) => (
           <MainContent key={data.room_id}  data={data} makeAutomatic={this.makeAutomatic} />          
         ))}

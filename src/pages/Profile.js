@@ -171,7 +171,7 @@ export class Profile extends Component {
                       <label className="col-sm-3 col-form-label form-control-label"></label>
                       <div className="col-sm-9">
                         <input type="hidden" name="user_id" />
-                        <input type="reset" className="btn btn-secondary btn-sm" value="Cancel" />&nbsp;
+                        <a href="/home" className="btn btn-secondary btn-sm">Cancel</a>&nbsp;
                             <input type="submit" className="btn btn-primary btn-sm" value="Update Changes" />
                       </div>
                     </div>

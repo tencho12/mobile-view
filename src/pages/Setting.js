@@ -172,6 +172,7 @@ export class Setting extends Component {
                                     <div className="form-group row">
                                         <label className="col-sm-3 col-form-label form-control-label"></label>
                                         <div className="col-sm-9">
+                                            <a href="/home" className="btn btn-secondary btn-sm">Cancel</a>&nbsp;
                                             <input type="submit" className="btn btn-primary btn-sm" value="Update" />
                                         </div>
                                     </div>

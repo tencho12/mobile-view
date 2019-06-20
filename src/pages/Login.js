@@ -60,7 +60,7 @@ export class Login extends Component {
             <input type="password" name="password" placeholder="password ..." className="form-control" value={this.state.password}
               onChange={this.onChange}/><br />
             <input type="submit" value="Login" className="form-control btn btn-primary" /><br /><br />
-            <a href="signup">Sign up if you did not!</a>
+            <p className="sup">Sign up if you did not!</p>
           </form>
           </div>
          {this.state.iserror==='false' ? noError : ErrorHandler }

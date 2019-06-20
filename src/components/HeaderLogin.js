@@ -4,7 +4,7 @@ function Header() {
     return (
         <div style={headerStyle}>
             <h4>Home Automation System</h4><br />
-            <p>Better home for better tommarrow</p>
+            <p>Better home for better tomorrow</p>
         </div>
     )
 }
@@ -19,4 +19,5 @@ const headerStyle = {
 //     color: '#fff',
 //     textDecoration: 'none'
 // }
+
 export default Header
